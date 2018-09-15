@@ -1,4 +1,4 @@
-from Graph import Graph as WeightedGraph
+from Graph.Graph import Graph as WeightedGraph
 
 def Graph(nodes, weighted, directed):
     if weighted and directed:

@@ -1,4 +1,4 @@
-from ModifiedGraph import Graph
+from Graph.ModifiedGraph import Graph
 from random import randrange, choice
 
 min_edges = lambda V: V-1
@@ -20,17 +20,25 @@ def random_edge(G, weighted, max_wgt):
     return (s, t, v) if weighted else (s, t)
 
 def random_node(G):
-    return choice(list(G.edges.keys()))
+    return choice(list(G.nodes()))
 
 if __name__ == "__main__":
     print("\nWeighted Directed Graph:")
-    print(random_graph(weighted = True, directed = True))
+    G = random_graph(weighted = True, directed = True)
+    print(G)
+    print("num nodes =", len(G))
 
     print("\nWeighted Undirected Graph:")
-    print(random_graph(weighted = True, directed = False))
+    G = random_graph(weighted = True, directed = False)
+    print(G)
+    print("num nodes =", len(G))
 
     print("\nUnweighted Directed Graph:")
-    print(random_graph(weighted = False, directed = True))
+    G = random_graph(weighted = False, directed = True)
+    print(G)
+    print("num nodes =", len(G))
     
     print("\nUnweighted Undirected Graph:")
-    print(random_graph(weighted = False, directed = False))
+    G = random_graph(weighted = False, directed = False)
+    print(G)
+    print("num nodes =", len(G))
